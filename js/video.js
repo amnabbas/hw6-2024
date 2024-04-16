@@ -27,7 +27,7 @@ document.querySelector("#pause").addEventListener("click", function() {
 //Click Slow Down Button
 document.querySelector("#slower").addEventListener("click", function() {
     video.playbackRate *= 0.9;
-    console.log("Updatedd speed:", video.playbackRate);
+    console.log("Updated speed:", video.playbackRate);
 });
 
 //Click Speed Up Button
@@ -40,6 +40,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#skip").addEventListener("click", function() {
     if (video.currentTime + 10 > video.duration) {
         video.currentTime = 0;
+        video.pause(); // Pause the video when resetting time to 0
     } else {
         video.currentTime += 10;
     }
